@@ -1,5 +1,22 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+}
+
 body {
-  background-color: coral;
+    background-color: coral;
+}
+
+.header {
+    border: 1px dashed red;
+    background-color: crimson;
+    height: 65vh;
+    width: 100%;
 }
 
 /*# sourceMappingURL=mobile.css.map */
