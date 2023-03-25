@@ -19,7 +19,7 @@ body {
 //--------------------------------------------
 
 .header {
-    border: 1px dashed red;
+    // border: 1px dashed blueviolet;
     background-color: $blanco;
     height: 50vh;
     width: 100%;
@@ -32,10 +32,28 @@ body {
     position: relative;
 
     .header_portada {
-        border: 1px dashed blue;
+        // border: 1px dashed blue;
         background-color: aqua;
         height: 85%;
         width: 100%;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .header_portada_container {
+            // border: 1px dashed red;
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+
+            .header_portada_container_img {
+                object-fit: cover;
+                width: 100%;
+                height: 100%;
+            }
+        }
     }
 
     .header_foto {
@@ -47,10 +65,23 @@ body {
 
         position: absolute;
         bottom: 5px;
+
+        .header_foto_container {
+            // border: 1px dashed red;
+            border-radius: 50%;
+            height: 100%;
+            width: 100%;
+
+            .header_foto_container_img {
+                border-radius: 50%;
+                width: 100%;
+                object-fit: cover;
+            }
+        }
     }
 
     .header_faja {
-        border: 1px dashed red;
+        // border: 1px dashed gray;
         background-color: $blanco;
         height: 15%;
         width: 100%;
