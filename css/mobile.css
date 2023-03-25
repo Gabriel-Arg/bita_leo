@@ -13,7 +13,7 @@ body {
 }
 
 .header {
-    border: 1px dashed red;
+    border: 1px dashed white;
     background-color: crimson;
     height: 65vh;
     width: 100%;
