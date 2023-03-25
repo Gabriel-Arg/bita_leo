@@ -1,3 +1,5 @@
+@import "variables.scss";
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -9,7 +11,7 @@ html {
 }
 
 body {
-    background-color: coral;
+    background-color: $blanco;
 }
 
 //--------------------------------------------
@@ -17,8 +19,41 @@ body {
 //--------------------------------------------
 
 .header {
-    border: 1px dashed white;
-    background-color: crimson;
-    height: 65vh;
+    border: 1px dashed red;
+    background-color: $blanco;
+    height: 50vh;
     width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    position: relative;
+
+    .header_portada {
+        border: 1px dashed blue;
+        background-color: aqua;
+        height: 85%;
+        width: 100%;
+    }
+
+    .header_foto {
+        border: 5px solid $blanco;
+        border-radius: 50%;
+        background-color: cornflowerblue;
+        height: 120px;
+        width: 120px;
+
+        position: absolute;
+        bottom: 5px;
+    }
+
+    .header_faja {
+        border: 1px dashed red;
+        background-color: $blanco;
+        height: 15%;
+        width: 100%;
+    }
+
 }

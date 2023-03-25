@@ -9,13 +9,42 @@ html {
 }
 
 body {
-    background-color: coral;
+    background-color: #e4e4e4;
 }
 
 .header {
-    border: 1px dashed white;
-    background-color: crimson;
-    height: 65vh;
+    border: 1px dashed red;
+    background-color: #e4e4e4;
+    height: 50vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.header .header_portada {
+    border: 1px dashed blue;
+    background-color: aqua;
+    height: 85%;
+    width: 100%;
+}
+
+.header .header_foto {
+    border: 5px solid #e4e4e4;
+    border-radius: 50%;
+    background-color: cornflowerblue;
+    height: 120px;
+    width: 120px;
+    position: absolute;
+    bottom: 5px;
+}
+
+.header .header_faja {
+    border: 1px dashed red;
+    background-color: #e4e4e4;
+    height: 15%;
     width: 100%;
 }
 
