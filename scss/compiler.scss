@@ -121,14 +121,16 @@ body {
     padding: 10px 0px;
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
 
     .contacto_btn {
-        border: 1px solid gray;
+        // border: 1px solid gray;
+        background-color: $gris_claro;
         border-radius: 4px;
-        height: 25px;
-        width: 100px;
+        margin: 0 3px;
+        height: 35px;
+        width: 130px;
 
         display: flex;
         flex-direction: column;
@@ -137,6 +139,8 @@ body {
 
         a {
             font-family: $parrafos;
+            color: $negro;
+            font-size: $parrafo_size;
             font-weight: bold;
             text-decoration: none;
         }

@@ -88,14 +88,15 @@ body {
   padding: 10px 0px;
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
 }
 .contacto .contacto_btn {
-  border: 1px solid gray;
+  background-color: #cdcdcd;
   border-radius: 4px;
-  height: 25px;
-  width: 100px;
+  margin: 0 3px;
+  height: 35px;
+  width: 130px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -103,6 +104,8 @@ body {
 }
 .contacto .contacto_btn a {
   font-family: "Cairo", sans-serif;
+  color: #161515;
+  font-size: 14px;
   font-weight: bold;
   text-decoration: none;
 }
