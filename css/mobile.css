@@ -84,4 +84,27 @@ body {
   font-weight: bold;
 }
 
+.contacto {
+  padding: 10px 0px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.contacto .contacto_btn {
+  border: 1px solid gray;
+  border-radius: 4px;
+  height: 25px;
+  width: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.contacto .contacto_btn a {
+  font-family: "Cairo", sans-serif;
+  font-weight: bold;
+  text-decoration: none;
+}
+
 /*# sourceMappingURL=mobile.css.map */
