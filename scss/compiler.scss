@@ -21,7 +21,7 @@ body {
 .header {
     // border: 1px dashed blueviolet;
     background-color: $blanco;
-    height: 50vh;
+    height: 30vh;
     width: 100%;
 
     display: flex;
@@ -34,7 +34,7 @@ body {
     .header_portada {
         // border: 1px dashed blue;
         background-color: aqua;
-        height: 85%;
+        height: 80%;
         width: 100%;
 
         display: flex;
@@ -64,7 +64,7 @@ body {
         width: 120px;
 
         position: absolute;
-        bottom: 5px;
+        bottom: 0px;
 
         .header_foto_container {
             // border: 1px dashed red;
@@ -83,8 +83,31 @@ body {
     .header_faja {
         // border: 1px dashed gray;
         background-color: $blanco;
-        height: 15%;
+        height: 20%;
         width: 100%;
     }
 
+}
+
+.titulo {
+    // border: 1px dashed red;
+    height: auto;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+
+    .titulo_encabezado {
+        // border: 1px dashed black;
+        font-family: $titulos;
+        font-size: $titulo_size;
+    }
+
+    .titulo_subtitulo {
+        font-family: $parrafos;
+        font-size: $parrafo_size;
+        font-weight: bold;
+    }
 }
