@@ -119,4 +119,32 @@ body {
   width: 100%;
 }
 
+.nuevopost {
+  padding: 5px;
+  height: 200px;
+  width: 100%;
+  position: relative;
+}
+.nuevopost .nuevopost_titulo {
+  font-family: "Kanit", sans-serif;
+  color: #e4e4e4;
+  font-size: 30px;
+  position: absolute;
+  bottom: 3px;
+  left: 10px;
+}
+.nuevopost .nuevopost_a {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+.nuevopost .nuevopost_a .nuevopost_a_img {
+  border-radius: 5px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  -webkit-box-shadow: 2px 2px 2px 0 #cdcdcd;
+  box-shadow: 5px 5px 5px 0 #cdcdcd;
+}
+
 /*# sourceMappingURL=mobile.css.map */

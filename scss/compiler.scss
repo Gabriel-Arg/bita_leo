@@ -159,3 +159,44 @@ body {
         }
     }
 }
+
+//--------------------------------------------
+//     NUEVO CONTENIDO
+//--------------------------------------------
+
+.nuevopost {
+    // border: 1px dashed rgb(4, 129, 23);
+    padding: 5px;
+    height: 200px;
+    width: 100%;
+
+    position: relative;
+
+    .nuevopost_titulo {
+        // border: 1px dashed red;
+        font-family: $titulos;
+        color: $blanco;
+        font-size: $titulo_size;
+
+        position: absolute;
+        bottom: 3px;
+        left: 10px;
+    }
+
+    .nuevopost_a {
+        // border: 1px dashed rgb(194, 24, 118);
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+        
+        .nuevopost_a_img {
+            border-radius: 5px;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+
+            -webkit-box-shadow: 2px 2px 2px 0 $gris_claro;
+            box-shadow: 5px 5px 5px 0 $gris_claro;
+        }
+    }
+}
