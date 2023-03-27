@@ -138,11 +138,24 @@ body {
         align-items: center;
 
         a {
+            // border: 1px dashed blue;
+            width: 100%;
             font-family: $parrafos;
             color: $negro;
             font-size: $parrafo_size;
             font-weight: bold;
             text-decoration: none;
+
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+
+            p {
+                // border: 1px dashed black;
+                width: 100%;
+            }
         }
     }
 }

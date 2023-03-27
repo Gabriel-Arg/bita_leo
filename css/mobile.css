@@ -103,11 +103,20 @@ body {
   align-items: center;
 }
 .contacto .contacto_btn a {
+  width: 100%;
   font-family: "Cairo", sans-serif;
   color: #161515;
   font-size: 14px;
   font-weight: bold;
   text-decoration: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.contacto .contacto_btn a p {
+  width: 100%;
 }
 
 /*# sourceMappingURL=mobile.css.map */
