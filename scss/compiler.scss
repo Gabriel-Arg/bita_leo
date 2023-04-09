@@ -200,3 +200,33 @@ body {
         }
     }
 }
+
+//--------------------------------------------
+//     NUEVO CONTENIDO
+//--------------------------------------------
+
+.btn_post {
+    border: 2px solid $gris_claro;
+    margin: 10px;
+    width: 150px;
+    height: 50px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .btn_post_a {
+        border: 1px dashed darkmagenta;
+        width: 100%;
+        height: 100%;
+        text-decoration: none;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        
+    }
+}
