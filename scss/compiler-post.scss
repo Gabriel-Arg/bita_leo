@@ -16,9 +16,42 @@ html {
 
 body {
     background-color: $blanco;
-    border: 1px dashed red;
+    // border: 1px dashed red;
 }
 
 //--------------------------------------------
-//   SETEADO
+//   CRONICA
 //--------------------------------------------
+
+.cronica {
+    // border: 1px dashed darkmagenta;
+    margin: 30px 10px;
+
+    .cronica_titulo {
+        // border: 1px dashed rebeccapurple;
+        margin-bottom: 10px;
+        font-family: $titulos;
+        font-size: $titulo_size;
+        color: $negro;
+        line-height: 0.8;
+    }
+
+    .cronica_subtitulo {
+        font-family: $parrafos;
+        font-size: $subtitulo_size;
+        line-height: 0.9;
+        text-align: justify;
+    }
+}
+
+.parrafo {
+    // border: 1px dashed darkmagenta;
+    margin: 30px 10px;
+
+    .parrafo_p {
+        font-family: $parrafos;
+        font-size: $parrafo_size;
+        line-height: 1.3;
+    }
+    
+}
