@@ -9,11 +9,11 @@ html {
 }
 
 body {
-  background-color: #e4e4e4;
+  background-color: #e0e0e0;
 }
 
 .header {
-  background-color: #e4e4e4;
+  background-color: #e0e0e0;
   height: 30vh;
   width: 100%;
   display: flex;
@@ -42,7 +42,7 @@ body {
   height: 100%;
 }
 .header .header_foto {
-  border: 5px solid #e4e4e4;
+  border: 5px solid #e0e0e0;
   border-radius: 50%;
   background-color: cornflowerblue;
   height: 120px;
@@ -61,7 +61,7 @@ body {
   object-fit: cover;
 }
 .header .header_faja {
-  background-color: #e4e4e4;
+  background-color: #e0e0e0;
   height: 20%;
   width: 100%;
 }
@@ -75,12 +75,12 @@ body {
   align-items: center;
 }
 .titulo .titulo_encabezado {
-  font-family: "Kanit", sans-serif;
-  font-size: 30px;
+  font-family: "Bebas Neue", cursive;
+  font-size: 80px;
 }
 .titulo .titulo_subtitulo {
   font-family: "Cairo", sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: bold;
 }
 
@@ -92,7 +92,7 @@ body {
   align-items: center;
 }
 .contacto .contacto_btn {
-  background-color: #cdcdcd;
+  background-color: #afafaf;
   border-radius: 4px;
   margin: 0 3px;
   height: 35px;
@@ -106,7 +106,7 @@ body {
   width: 100%;
   font-family: "Cairo", sans-serif;
   color: #161515;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: bold;
   text-decoration: none;
   display: flex;
@@ -126,9 +126,9 @@ body {
   position: relative;
 }
 .nuevopost .nuevopost_titulo {
-  font-family: "Kanit", sans-serif;
-  color: #e4e4e4;
-  font-size: 30px;
+  font-family: "Bebas Neue", cursive;
+  color: #e0e0e0;
+  font-size: 80px;
   position: absolute;
   bottom: 3px;
   left: 10px;
@@ -143,12 +143,12 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  -webkit-box-shadow: 2px 2px 2px 0 #cdcdcd;
-  box-shadow: 5px 5px 5px 0 #cdcdcd;
+  -webkit-box-shadow: 2px 2px 2px 0 #afafaf;
+  box-shadow: 5px 5px 5px 0 #afafaf;
 }
 
 .btn_post {
-  border: 2px solid #cdcdcd;
+  border: 2px solid #afafaf;
   margin: 10px;
   width: 150px;
   height: 50px;
