@@ -32,9 +32,9 @@ body {
         // border: 1px dashed rebeccapurple;
         margin-bottom: 10px;
         font-family: $titulos;
-        font-size: $titulo_size;
+        font-size: 60px;
         color: $negro;
-        line-height: 0.8;
+        line-height: 0.95;
     }
 
     .cronica_subtitulo {
@@ -54,6 +54,11 @@ body {
         font-size: $parrafo_size;
         line-height: 1.3;
         text-align: justify;
+    }
+
+    .parrafo_p_destacado {
+        color: $rojo;
+        font-weight: bold;
     }
 
     .parrafo_p_fecha {
