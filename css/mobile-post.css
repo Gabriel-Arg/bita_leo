@@ -43,6 +43,11 @@ body {
   color: #963737;
   font-weight: bold;
 }
+.parrafo .parrafo_p_subtitulo {
+  color: #161515;
+  font-weight: 800;
+  font-size: 18px;
+}
 .parrafo .parrafo_p_fecha {
   margin-top: 20px;
 }
