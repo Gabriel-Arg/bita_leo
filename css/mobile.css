@@ -76,7 +76,7 @@ body {
 }
 .titulo .titulo_encabezado {
   font-family: "Bebas Neue", cursive;
-  font-size: 80px;
+  font-size: 60px;
 }
 .titulo .titulo_subtitulo {
   font-family: "Cairo", sans-serif;
@@ -128,7 +128,7 @@ body {
 .nuevopost .nuevopost_titulo {
   font-family: "Bebas Neue", cursive;
   color: #e0e0e0;
-  font-size: 80px;
+  font-size: 60px;
   position: absolute;
   bottom: 3px;
   left: 10px;
@@ -166,6 +166,106 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+/* --------------------------------------------
+CONTENEDOR MADRE - HOME
+-------------------------------------------- */
+/* --------------------------------------------
+CONTENEDOR MADRE - HOME
+-------------------------------------------- */
+.contenedor_madre {
+  width: 100%;
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* --------------------------------------------
+CAJAS HIJAS - HOME
+-------------------------------------------- */
+.box {
+  box-sizing: border-box;
+  text-decoration: none;
+  color: #161515;
+}
+
+.box_2,
+.box_3,
+.box_4 {
+  border-bottom: 1px solid rgba(22, 21, 21, 0.25);
+}
+
+.box_1 {
+  height: 45dvh;
+  flex-shrink: 0;
+  background-image: url("../img/portada.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.box_1 p {
+  margin: 0;
+  padding: 0.5rem 1rem;
+  color: #161515;
+  font-family: "Cairo", sans-serif;
+  font-size: 13px;
+  line-height: 1.4;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.box_2,
+.box_3,
+.box_4,
+.box_5 {
+  flex: 1;
+  min-height: 0;
+}
+
+.box_2,
+.box_3,
+.box_4 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Bebas Neue", cursive;
+  font-size: clamp(34px, 9vw, 56px);
+  text-align: center;
+}
+
+/* --------------------------------------------
+BOX_5 - CONTENEDOR DE SUBCAJAS
+-------------------------------------------- */
+.box_5 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+/* --------------------------------------------
+BOX_5A Y BOX_5B - SUBCAJAS
+-------------------------------------------- */
+.box_5A,
+.box_5B {
+  height: 100%;
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.box_5A img,
+.box_5B img {
+  width: clamp(50px, 12vw, 85px);
+  height: clamp(50px, 12vw, 85px);
+  object-fit: contain;
 }
 
 /*# sourceMappingURL=mobile.css.map */
