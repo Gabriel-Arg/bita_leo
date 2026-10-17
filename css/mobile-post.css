@@ -65,4 +65,59 @@ body {
   box-shadow: 2px 2px 5px #161515;
 }
 
+.guia {
+  position: fixed;
+  right: 0;
+  top: 15vh;
+  bottom: 15vh;
+  width: 16px;
+  z-index: 10;
+}
+
+.guia_linea {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  transform: translateX(-50%);
+  background: rgba(175, 175, 175, 0.35);
+  border-radius: 1px;
+  overflow: hidden;
+}
+
+.guia_progreso {
+  width: 100%;
+  height: 0;
+  background: #963737;
+}
+
+.guia_marca {
+  position: absolute;
+  left: 50%;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  border: 0;
+  background: none;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+}
+.guia_marca::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #afafaf;
+  transform: translate(-50%, -50%);
+  transition: transform 0.2s, background 0.2s;
+}
+.guia_marca.activa::before {
+  background: #963737;
+  transform: translate(-50%, -50%) scale(1.6);
+}
+
 /*# sourceMappingURL=mobile-post.css.map */
