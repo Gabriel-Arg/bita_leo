@@ -149,3 +149,27 @@ body {
         transform: translate(-50%, -50%) scale(1.6);
     }
 }
+
+// ---------------------------------------------- 
+// ENLACE PARA VOLVER AL INICIO
+// ---------------------------------------------- 
+.volver {
+    display: inline-block;
+    padding: 12px 0;
+    font-family: $titulos;
+    font-size: $subtitulo_size;
+    letter-spacing: 1px;
+    text-decoration: none;
+    color: $gris_claro;
+    transition: color 0.2s;
+
+    &:hover,
+    &:focus {
+        color: $rojo;
+    }
+}
+
+// El del final: con aire arriba, como cierre de la lectura
+.parrafo .volver {
+    margin-top: 24px;
+}

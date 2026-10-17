@@ -120,4 +120,22 @@ body {
   transform: translate(-50%, -50%) scale(1.6);
 }
 
+.volver {
+  display: inline-block;
+  padding: 12px 0;
+  font-family: "Bebas Neue", cursive;
+  font-size: 20px;
+  letter-spacing: 1px;
+  text-decoration: none;
+  color: #afafaf;
+  transition: color 0.2s;
+}
+.volver:hover, .volver:focus {
+  color: #963737;
+}
+
+.parrafo .volver {
+  margin-top: 24px;
+}
+
 /*# sourceMappingURL=mobile-post.css.map */
