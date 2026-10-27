@@ -1,0 +1,143 @@
+@import 'variables';
+
+// ---------------------------------------------- 
+// COLORES DE DEPURACIÓN (temporales, se borran al final)
+// ---------------------------------------------- 
+$dep_madre: rgb(40, 140, 80);
+$dep_nivel_1: rgb(180, 50, 50);
+$dep_nivel_2: rgb(50, 100, 190);
+$dep_nivel_3: rgb(210, 120, 20);
+$dep_nivel_4: rgb(130, 60, 170);
+
+// ---------------------------------------------- 
+// BASE
+// ---------------------------------------------- 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: $blanco;
+    color: $negro;
+    font-family: $parrafos;
+    font-size: $parrafo_size;
+}
+
+// ---------------------------------------------- 
+// CAJA MADRE: alto mínimo = pantalla; crece si hace falta
+// ---------------------------------------------- 
+.caja_madre {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    min-height: 100vh;   // respaldo para navegadores viejos
+    min-height: 100dvh;
+    padding: 12px;
+    border: 2px dotted $dep_madre;
+}
+
+// ---------------------------------------------- 
+// BOX HIJO 1: buscador (izquierda) y menú (derecha)
+// ---------------------------------------------- 
+.box_hijo_1 {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    padding: 12px;
+    border: 2px dotted $dep_nivel_1;
+}
+
+.box_hijo_1A {
+    flex: 1;
+    padding: 12px;
+    border: 2px dotted $dep_nivel_2;
+}
+
+.box_hijo_1B {
+    flex: none;
+    width: 64px;
+    padding: 12px;
+    border: 2px dotted $dep_nivel_2;
+}
+
+// ---------------------------------------------- 
+// BOX HIJO 2: tarjetas en 2 columnas (ocupa el espacio que sobra)
+// ---------------------------------------------- 
+.box_hijo_2 {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;             // las tarjetas pasan a la fila siguiente
+    align-content: flex-start;   // las filas no se estiran
+    gap: 12px;
+    padding: 12px;
+    border: 2px dotted $dep_nivel_1;
+}
+
+// ---------------------------------------------- 
+// CARD: cada tarjeta es una columna (imagen, capítulo, título)
+// ---------------------------------------------- 
+.card {
+    flex: 0 0 calc(50% - 6px);   // 2 por fila (6px = la mitad del gap)
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 8px;
+    text-decoration: none;
+    color: inherit;
+    border: 2px dotted $dep_nivel_3;
+}
+
+.card_imagen {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 4 / 3;
+    background: $gris_claro;
+    border: 2px dotted $dep_nivel_4;
+}
+
+.card_capitulo {
+    padding: 4px;
+    font-family: $titulos;
+    font-size: $subtitulo_size;
+    letter-spacing: 1px;
+    border: 2px dotted $dep_nivel_4;
+}
+
+.card_titulo {
+    padding: 4px;
+    font-size: 14px;
+    line-height: 1.3;
+    border: 2px dotted $dep_nivel_4;
+}
+
+// ---------------------------------------------- 
+// BOX HIJO 3: paginación (siempre abajo)
+// ---------------------------------------------- 
+.box_hijo_3 {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    padding: 12px;
+    border: 2px dotted $dep_nivel_1;
+}
+
+.box_hijo_3A,
+.box_hijo_3C {
+    flex: none;
+    width: 90px;
+    padding: 12px;
+    text-align: center;
+    border: 2px dotted $dep_nivel_2;
+}
+
+.box_hijo_3B {
+    flex: 1;
+    padding: 12px;
+    text-align: center;
+    border: 2px dotted $dep_nivel_2;
+}
+
