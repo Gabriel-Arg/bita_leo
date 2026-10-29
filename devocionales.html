@@ -32,7 +32,21 @@
 
         <!-- BOX HIJO 1: buscador y menú ------------------------------------------------------>
         <div class="box_hijo_1">
-            <div class="box_hijo_1A">Buscador</div>
+
+            <!-- BUSCADOR -------------------------------------------------->
+            <div class="box_hijo_1A" role="search">
+                <input type="search" id="buscador" placeholder="Buscar..." aria-label="Buscar publicaciones"
+                    autocomplete="off">
+                <button type="button" id="btn_buscar" aria-label="Buscar">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" aria-hidden="true">
+                        <circle cx="10" cy="10" r="6"></circle>
+                        <line x1="15" y1="15" x2="21" y2="21"></line>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- MENÚ ------------------------------->
             <div class="box_hijo_1B">Menú</div>
         </div>
 
