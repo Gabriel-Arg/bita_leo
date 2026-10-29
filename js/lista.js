@@ -8,10 +8,15 @@ const btnAtras = document.getElementById('btn_atras');
 const btnSiguiente = document.getElementById('btn_siguiente');
 const campoBusqueda = document.getElementById('buscador');
 const btnBuscar = document.getElementById('btn_buscar');
+const btnMenu = document.getElementById('btn_menu');
+const menuGrupos = document.getElementById('menu_grupos');
 
 // La lista que se está mostrando (al principio, todas) y la página actual
 let listaActual = publicaciones;
 let paginaActual = 1;
+
+// El grupo elegido en el menú ('' significa "todos")
+let grupoActual = '';
 
 // Cuántas páginas hay para la lista que se está mostrando
 function totalPaginas() {
@@ -23,7 +28,7 @@ function normalizar(texto) {
     return texto.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
 }
 
-// Filtra la lista según lo escrito en el buscador
+// Filtra la lista según el grupo elegido y lo escrito en el buscador
 function filtrar() {
     const palabras = normalizar(campoBusqueda.value)
         .split(' ')
@@ -31,21 +36,79 @@ function filtrar() {
             return palabra !== '';
         });
 
-    if (palabras.length === 0) {
-        listaActual = publicaciones;
-    } else {
-        listaActual = publicaciones.filter(function (pub) {
-            const texto = normalizar(
-                [pub.grupo, pub.capitulo, pub.titulo, pub.subtitulo].join(' ')
-            );
-            // La publicación debe contener TODAS las palabras escritas
-            return palabras.every(function (palabra) {
-                return texto.includes(palabra);
-            });
+    listaActual = publicaciones.filter(function (pub) {
+        // Si hay un grupo elegido, la publicación debe pertenecer a él
+        if (grupoActual !== '' && pub.grupo !== grupoActual) {
+            return false;
+        }
+
+        // Sin palabras escritas, alcanza con pasar el filtro de grupo
+        if (palabras.length === 0) {
+            return true;
+        }
+
+        const texto = normalizar(
+            [pub.grupo, pub.capitulo, pub.titulo, pub.subtitulo].join(' ')
+        );
+        // La publicación debe contener TODAS las palabras escritas
+        return palabras.every(function (palabra) {
+            return texto.includes(palabra);
         });
-    }
+    });
 
     mostrarPagina(1);
+}
+
+// Abre o cierra el panel del menú
+function alternarMenu() {
+    const estabaAbierto = !menuGrupos.hidden;
+    menuGrupos.hidden = estabaAbierto;
+    btnMenu.setAttribute('aria-expanded', String(!estabaAbierto));
+}
+
+function cerrarMenu() {
+    menuGrupos.hidden = true;
+    btnMenu.setAttribute('aria-expanded', 'false');
+}
+
+// Crea un botón del menú (por ejemplo "Todos" o "Nehemías")
+function crearOpcionMenu(texto, valor) {
+    const opcion = document.createElement('button');
+    opcion.type = 'button';
+    opcion.className = 'opcion_menu';
+    opcion.textContent = texto;
+
+    if (valor === grupoActual) {
+        opcion.classList.add('activa');
+        opcion.setAttribute('aria-pressed', 'true');
+    }
+
+    opcion.addEventListener('click', function () {
+        grupoActual = valor;
+        dibujarMenu();
+        cerrarMenu();
+        filtrar();
+    });
+
+    menuGrupos.appendChild(opcion);
+}
+
+// Arma el menú a partir de los grupos que existen en la lista
+function dibujarMenu() {
+    menuGrupos.replaceChildren();
+
+    // Grupos sin repetir, en el orden en que aparecen
+    const grupos = [];
+    publicaciones.forEach(function (pub) {
+        if (!grupos.includes(pub.grupo)) {
+            grupos.push(pub.grupo);
+        }
+    });
+
+    crearOpcionMenu('Todos', '');
+    grupos.forEach(function (grupo) {
+        crearOpcionMenu(grupo, grupo);
+    });
 }
 
 // Arma una tarjeta a partir de una publicación de la lista
@@ -150,5 +213,9 @@ btnSiguiente.addEventListener('click', function () {
 campoBusqueda.addEventListener('input', filtrar);
 btnBuscar.addEventListener('click', filtrar);
 
-// Al cargar la página, mostramos la primera
+// El botón del menú abre y cierra el panel de grupos
+btnMenu.addEventListener('click', alternarMenu);
+
+// Al cargar la página: armamos el menú y mostramos la primera página
+dibujarMenu();
 mostrarPagina(1);

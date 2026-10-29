@@ -32,7 +32,6 @@
 
         <!-- BOX HIJO 1: buscador y menú ------------------------------------------------------>
         <div class="box_hijo_1">
-
             <!-- BUSCADOR -------------------------------------------------->
             <div class="box_hijo_1A" role="search">
                 <input type="search" id="buscador" placeholder="Buscar..." aria-label="Buscar publicaciones"
@@ -47,12 +46,22 @@
             </div>
 
             <!-- MENÚ ------------------------------->
-            <div class="box_hijo_1B">Menú</div>
+            <div class="box_hijo_1B">
+                <button type="button" id="btn_menu" aria-label="Filtrar por grupo" aria-expanded="false"
+                    aria-controls="menu_grupos">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linejoin="round" aria-hidden="true">
+                        <polygon points="3,4 21,4 14,12 14,19 10,21 10,12"></polygon>
+                    </svg>
+                </button>
+            </div>
         </div>
+
+        <!-- MENÚ DE GRUPOS: se abre con el botón de filtro ----------------------------------->
+        <div class="menu_grupos" id="menu_grupos" hidden></div>
 
         <!-- BOX HIJO 2: tarjetas ------------------------------------------------------------->
         <div class="box_hijo_2">
-
         </div>
 
         <!-- BOX HIJO 3: paginación ----------------------------------------------------------->
