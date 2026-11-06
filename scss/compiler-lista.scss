@@ -164,3 +164,115 @@ body {
 .caja_madre .volver {
     align-self: flex-start;
 }
+
+// ---------------------------------------------- 
+// PANEL LATERAL DE FILTRO
+// ---------------------------------------------- 
+.filtro_fondo {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba($negro, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.25s ease, visibility 0.25s;
+    z-index: 20;
+
+    &.abierto {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+.filtro_panel {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 80vw;
+    max-width: 320px;
+    display: flex;
+    flex-direction: column;
+    background: $blanco;
+    box-shadow: -4px 0 16px rgba($negro, 0.25);
+    transform: translateX(100%);
+    visibility: hidden;
+    transition: transform 0.25s ease, visibility 0.25s;
+    z-index: 30;
+
+    &.abierto {
+        transform: translateX(0);
+        visibility: visible;
+    }
+}
+
+.filtro_cabecera {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 8px 12px 16px;
+    border-bottom: 1px solid rgba($negro, 0.15);
+}
+
+.filtro_titulo {
+    font-family: $titulos;
+    font-size: $subtitulo_size;
+    font-weight: normal;
+    letter-spacing: 1px;
+}
+
+.filtro_cerrar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border: 0;
+    background: none;
+    color: $negro;
+    cursor: pointer;
+    transition: color 0.2s;
+
+    &:hover,
+    &:focus {
+        color: $rojo;
+    }
+}
+
+.filtro_lista {
+    flex: 1;
+    overflow-y: auto;
+    padding: 8px 16px;
+}
+
+.filtro_lista .opcion_menu {
+    display: block;
+    width: 100%;
+    padding: 14px 0;
+    border: 0;
+    border-bottom: 1px solid rgba($negro, 0.1);
+    background: none;
+    font-family: $titulos;
+    font-size: $subtitulo_size;
+    letter-spacing: 1px;
+    text-align: left;
+    color: $negro;
+    cursor: pointer;
+    transition: color 0.2s;
+
+    &:hover,
+    &:focus,
+    &.activa {
+        color: $rojo;
+    }
+}
+
+// Si la persona tiene desactivado el movimiento en su dispositivo, sin animación
+@media (prefers-reduced-motion: reduce) {
+    .filtro_fondo,
+    .filtro_panel {
+        transition: none;
+    }
+}

@@ -8,8 +8,13 @@ const btnAtras = document.getElementById('btn_atras');
 const btnSiguiente = document.getElementById('btn_siguiente');
 const campoBusqueda = document.getElementById('buscador');
 const btnBuscar = document.getElementById('btn_buscar');
+
+// Elementos del panel lateral de filtro
 const btnMenu = document.getElementById('btn_menu');
-const menuGrupos = document.getElementById('menu_grupos');
+const filtroPanel = document.getElementById('filtro_panel');
+const filtroFondo = document.getElementById('filtro_fondo');
+const filtroCerrar = document.getElementById('filtro_cerrar');
+const listaGrupos = document.getElementById('lista_grupos');
 
 // La lista que se está mostrando (al principio, todas) y la página actual
 let listaActual = publicaciones;
@@ -59,19 +64,30 @@ function filtrar() {
     mostrarPagina(1);
 }
 
-// Abre o cierra el panel del menú
-function alternarMenu() {
-    const estabaAbierto = !menuGrupos.hidden;
-    menuGrupos.hidden = estabaAbierto;
-    btnMenu.setAttribute('aria-expanded', String(!estabaAbierto));
+// ---------------------------------------------- 
+// PANEL LATERAL: abrir y cerrar
+// ---------------------------------------------- 
+function panelAbierto() {
+    return filtroPanel.classList.contains('abierto');
 }
 
-function cerrarMenu() {
-    menuGrupos.hidden = true;
+function abrirPanel() {
+    filtroPanel.classList.add('abierto');
+    filtroFondo.classList.add('abierto');
+    btnMenu.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden';   // la página de atrás no se mueve
+    filtroCerrar.focus();
+}
+
+function cerrarPanel() {
+    filtroPanel.classList.remove('abierto');
+    filtroFondo.classList.remove('abierto');
     btnMenu.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+    btnMenu.focus();
 }
 
-// Crea un botón del menú (por ejemplo "Todos" o "Nehemías")
+// Crea un botón del panel (por ejemplo "Todos" o "Nehemías")
 function crearOpcionMenu(texto, valor) {
     const opcion = document.createElement('button');
     opcion.type = 'button';
@@ -86,16 +102,16 @@ function crearOpcionMenu(texto, valor) {
     opcion.addEventListener('click', function () {
         grupoActual = valor;
         dibujarMenu();
-        cerrarMenu();
+        cerrarPanel();
         filtrar();
     });
 
-    menuGrupos.appendChild(opcion);
+    listaGrupos.appendChild(opcion);
 }
 
-// Arma el menú a partir de los grupos que existen en la lista
+// Arma las opciones del panel a partir de los grupos que existen en la lista
 function dibujarMenu() {
-    menuGrupos.replaceChildren();
+    listaGrupos.replaceChildren();
 
     // Grupos sin repetir, en el orden en que aparecen
     const grupos = [];
@@ -213,9 +229,17 @@ btnSiguiente.addEventListener('click', function () {
 campoBusqueda.addEventListener('input', filtrar);
 btnBuscar.addEventListener('click', filtrar);
 
-// El botón del menú abre y cierra el panel de grupos
-btnMenu.addEventListener('click', alternarMenu);
+// El embudo abre el panel; la X, el fondo oscuro y la tecla Esc lo cierran
+btnMenu.addEventListener('click', abrirPanel);
+filtroCerrar.addEventListener('click', cerrarPanel);
+filtroFondo.addEventListener('click', cerrarPanel);
 
-// Al cargar la página: armamos el menú y mostramos la primera página
+document.addEventListener('keydown', function (evento) {
+    if (evento.key === 'Escape' && panelAbierto()) {
+        cerrarPanel();
+    }
+});
+
+// Al cargar la página: armamos el panel y mostramos la primera página
 dibujarMenu();
 mostrarPagina(1);

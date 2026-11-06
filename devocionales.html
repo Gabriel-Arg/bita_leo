@@ -51,7 +51,7 @@
             <!-- MENÚ ------------------------------->
             <div class="box_hijo_1B">
                 <button type="button" id="btn_menu" aria-label="Filtrar por grupo" aria-expanded="false"
-                    aria-controls="menu_grupos">
+                    aria-controls="filtro_panel">
                     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                         stroke-linejoin="round" aria-hidden="true">
                         <polygon points="3,4 21,4 14,12 14,19 10,21 10,12"></polygon>
@@ -60,7 +60,7 @@
             </div>
         </div>
 
-        <!-- MENÚ DE GRUPOS: se abre con el botón de filtro ----------------------------------->
+        <!-- MENÚ DE GRUPOS: se abre con el botón de filtro -->
         <div class="menu_grupos" id="menu_grupos" hidden></div>
 
         <!-- BOX HIJO 2: tarjetas ------------------------------------------------------------->
@@ -82,6 +82,28 @@
         <a class="volver" href="index.html">← Inicio</a>
 
     </div>
+
+    <!-- PANEL LATERAL DE FILTRO (se abre desde el botón de la caja 1B) -->
+    <div class="filtro_fondo" id="filtro_fondo"></div>
+
+    <aside class="filtro_panel" id="filtro_panel" aria-label="Filtrar por grupo">
+        <div class="filtro_cabecera">
+            <h2 class="filtro_titulo">Filtrar</h2>
+            <button type="button" class="filtro_cerrar" id="filtro_cerrar" aria-label="Cerrar filtro">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" aria-hidden="true">
+                    <line x1="5" y1="5" x2="19" y2="19"></line>
+                    <line x1="19" y1="5" x2="5" y2="19"></line>
+                </svg>
+            </button>
+        </div>
+
+        <div class="filtro_lista" id="lista_grupos">
+            <!-- Opciones de ejemplo: el JavaScript las reemplaza en el paso 2 -->
+            <button type="button" class="opcion_menu activa">Todos</button>
+            <button type="button" class="opcion_menu">Nehemías</button>
+        </div>
+    </aside>
 
     <script src="js/datos-devocionales.js"></script>
     <script src="js/lista.js"></script>
