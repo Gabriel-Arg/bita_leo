@@ -141,9 +141,26 @@ body {
     border: 2px dotted $dep_nivel_2;
 }
 
-w4ieotfypgv{bh
-kjl4ñ{
+// ---------------------------------------------- 
+// ENLACE PARA VOLVER AL INICIO
+// ---------------------------------------------- 
+.volver {
+    display: inline-block;
+    padding: 12px 0;
+    font-family: $titulos;
+    font-size: $subtitulo_size;
+    letter-spacing: 1px;
+    text-decoration: none;
+    color: $gris_claro;
+    transition: color 0.2s;
 
-213
+    &:hover,
+    &:focus {
+        color: $rojo;
+    }
+}
 
+// Dentro de la caja madre: pegado a la izquierda, sin estirarse a lo ancho
+.caja_madre .volver {
+    align-self: flex-start;
 }
